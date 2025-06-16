@@ -1,0 +1,1373 @@
+{
+	// 4-character identifer that uniquely identifies your extension.
+	// Can be letters, numbers, or punctuation, but must be 4 ASCII characters.
+	"Identifier": "VFXO",
+	"Dependencies": "",
+	"UK English": {
+		"About": {
+			"Name": "VanillaExt",
+			"Author": "Foxioo",
+			"Copyright": "Copyright \u00A9 2025 by Foxioo",
+			"Comment": "A universal extension mainly focusing on mathematics.",
+			"Help": "",
+			"URL": ""
+		},
+
+		/* ############################################################################################################################ */
+
+		"ActionMenu": [
+			[
+				"Varibles",
+				[
+					"Pointers (Experimental)",
+					[ 2, "Free Memory Block" ],
+					"---",
+					[ 3, "Write Integer to Pointer (4 Bytes Minimum)" ],
+					[ 5, "Write Float to Pointer (4 Bytes Minimum)" ],
+					"---",
+					[ 4, "Copy Bytes from Pointer To Pointer" ]
+
+				],
+				"---",
+				[
+					"Matrix",
+					[
+						"Integer",
+						[ 14, "Create Integer Matrix" ],
+						[ 15, "Delete Integer Matrix" ],
+						"---",
+						[ 16, "Change variable in Integer Matrix" ],
+						"---",
+						[ 6, "Override Int1 [X]" ],
+						[ 7, "Override Int2 [X, Y]" ],
+						[ 8, "Override Int3 [X, Y, Z]" ],
+						[ 9, "Override Int4 [X, Y, Z, W]" ]
+					],
+					[
+						"Float",
+						[ 17, "Create Float Matrix" ],
+						[ 18, "Delete Float Matrix" ],
+						"---",
+						[ 19, "Change variable in Float Matrix" ],
+						"---",
+						[ 10, "Override Float1 [X]" ],
+						[ 11, "Override Float2 [X, Y]" ],
+						[ 12, "Override Float3 [X, Y, Z]" ],
+						[ 13, "Override Float4 [X, Y, Z, W]" ]
+					],
+					[
+						"Text",
+						[ 20, "Create Text Matrix" ],
+						[ 21, "Delete Text Matrix" ],
+						"---",
+						[ 22, "Change variable in Text Matrix" ],
+						"---",
+						[ 23, "Override Text1 [X]" ],
+						[ 24, "Override Text2 [X, Y]" ],
+						[ 25, "Override Text3 [X, Y, Z]" ],
+						[ 26, "Override Text4 [X, Y, Z, W]" ]
+					]
+				],
+				[
+					"Array",
+					[
+						"Integer",
+						[ 27, "Create Integer Array" ],
+						[ 28, "Delete Integer Array" ],
+						"---",
+						[ 29, "Change variable in Integer Array" ]
+					],
+					[
+						"Float",
+						[ 30, "Create Float Array" ],
+						[ 31, "Delete Float Array" ],
+						"---",
+						[ 32, "Change variable in Float Array" ]
+					],
+					[
+						"Text",
+						[ 33, "Create Text Array" ],
+						[ 34, "Delete Text Array" ],
+						"---",
+						[ 35, "Change variable in Text Array" ]
+					]
+				]
+			],
+			[
+				"Functions",
+				[
+					"Hardware Functions",
+					[
+						"Microphone",
+						[ 36, "Capture Microphone" ],
+						"---",
+						[ 37, "Set Delay" ],
+						[ 38, "Set Frequency Samples" ]
+					]
+				]
+			],
+			"---"
+		],
+
+		"Actions": [
+			{
+				"Title": "Action Example with parameter %0",
+				"Parameters": [
+					[ "Integer", "Example Parameter" ]
+				]
+			},
+
+			{
+				"Title": "Second Action Example"
+			},
+
+			/* --------------------------------------------------------------- 2 */
+			{
+				"Title": "Free Memory Block (Pointer: %0)",
+				"Parameters": [
+					[ "Integer", "Free Memory Block" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 3 */
+			{
+				"Title": "Write Integer %1 to Pointer %0",
+				"Parameters": [
+					[ "Integer", "Pointer" ],
+					[ "Integer", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 4 */
+			{
+				"Title": "Copy %2 Bytes from %0 to %1",
+				"Parameters": [
+					[ "Integer", "Source Pointer" ],
+					[ "Integer", "Destination Pointer" ],
+					[ "Integer", "Bytes to copy" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 5 */
+			{
+				"Title": "Write Float %1 to Pointer %0",
+				"Parameters": [
+					[ "Integer", "Pointer" ],
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 6 */
+			{
+				"Title": "Overwrite variable (Int %0) to [%1]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Integer", "X Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 7 */
+			{
+				"Title": "Overwrite variable (Int2 %0) to [%1, %2]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Integer", "X Value" ],
+					[ "Integer", "Y Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 8 */
+			{
+				"Title": "Overwrite variable (Int3 %0) to [%1, %2, %3]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Integer", "X Value" ],
+					[ "Integer", "Y Value" ],
+					[ "Integer", "Z Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 9 */
+			{
+				"Title": "Overwrite variable (Int4 %0) to [%1, %2, %3, %4]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Integer", "X Value" ],
+					[ "Integer", "Y Value" ],
+					[ "Integer", "Z Value" ],
+					[ "Integer", "W Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 10 */
+			{
+				"Title": "Overwrite variable (Float %0) to [%1]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Float", "X Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 11 */
+			{
+				"Title": "Overwrite variable (Float2 %0) to [%1, %2]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Float", "X Value" ],
+					[ "Float", "Y Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 12 */
+			{
+				"Title": "Overwrite variable (Float3 %0) to [%1, %2, %3]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Float", "X Value" ],
+					[ "Float", "Y Value" ],
+					[ "Float", "Z Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 13 */
+			{
+				"Title": "Overwrite variable (Float4 %0) to [%1, %2, %3, %4]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Float", "X Value" ],
+					[ "Float", "Y Value" ],
+					[ "Float", "Z Value" ],
+					[ "Float", "W Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 14 */
+			{
+				"Title": "Create %1 Matrix %0",
+				"Parameters": [
+					[ "Text", "Matrix name" ],
+					[ "Text", "Type (int, int2, int3, int4)" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 15 */
+			{
+				"Title": "Remove Integer Matrix %0",
+				"Parameters": [
+					[ "Text", "Matrix name" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 16 */
+			{
+				"Title": "Change %1 value in Float Matrix %0",
+				"Parameters": [
+					[ "Text", "Matrix name" ],
+					[ "Text", "Variable (X, Y, Z, W)" ],
+					[ "Integer", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 17 */
+			{
+				"Title": "Create %1 Matrix %0",
+				"Parameters": [
+					[ "Text", "Matrix name" ],
+					[ "Text", "Type (float, float2, float3, float4)" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 18 */
+			{
+				"Title": "Remove Float Matrix %0",
+				"Parameters": [
+					[ "Text", "Matrix name" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 19 */
+			{
+				"Title": "Change %1 value in Float Matrix %0",
+				"Parameters": [
+					[ "Text", "Matrix name" ],
+					[ "Text", "Variable (X, Y, Z, W)" ],
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 20 */
+			{
+				"Title": "Create %1 Matrix %0",
+				"Parameters": [
+					[ "Text", "Matrix name" ],
+					[ "Text", "Type (text, text2, text3, text4)" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 21 */
+			{
+				"Title": "Remove Text Matrix %0",
+				"Parameters": [
+					[ "Text", "Matrix name" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 22 */
+			{
+				"Title": "Change %1 value in Text Matrix %0",
+				"Parameters": [
+					[ "Text", "Matrix name" ],
+					[ "Text", "Variable (X, Y, Z, W)" ],
+					[ "Text", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 23 */
+			{
+				"Title": "Overwrite variable (Text %0) to [%1]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Text", "X Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 24 */
+			{
+				"Title": "Overwrite variable (Text2 %0) to [%1, %2]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Text", "X Value" ],
+					[ "Text", "Y Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 25 */
+			{
+				"Title": "Overwrite variable (Text3 %0) to [%1, %2, %3]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Text", "X Value" ],
+					[ "Text", "Y Value" ],
+					[ "Text", "Z Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 26 */
+			{
+				"Title": "Overwrite variable (Text4 %0) to [%1, %2, %3, %4]",
+				"Parameters": [
+					[ "Text", "Variable name" ],
+					[ "Text", "X Value" ],
+					[ "Text", "Y Value" ],
+					[ "Text", "Z Value" ],
+					[ "Text", "W Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 27 */
+			{
+				"Title": "Create Integer Array %0 of size %1",
+				"Parameters": [
+					[ "Text", "Array name" ],
+					[ "Integer", "Array size" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 28 */
+			{
+				"Title": "Remove Integer Array %0",
+				"Parameters": [
+					[ "Text", "Array name" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 29 */
+			{
+				"Title": "Change value from %1 to %2 in Integer Array %0",
+				"Parameters": [
+					[ "Text", "Array name" ],
+					[ "Integer", "Position" ],
+					[ "Integer", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 30 */
+			{
+				"Title": "Create Float Array %0 of size %1",
+				"Parameters": [
+					[ "Text", "Array name" ],
+					[ "Integer", "Array size" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 31 */
+			{
+				"Title": "Remove Float Array %0",
+				"Parameters": [
+					[ "Text", "Array name" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 32 */
+			{
+				"Title": "Change value from %1 to %2 in Float Array %0",
+				"Parameters": [
+					[ "Text", "Array name" ],
+					[ "Integer", "Position" ],
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 33 */
+			{
+				"Title": "Create Text Array %0 of size %1",
+				"Parameters": [
+					[ "Text", "Array name" ],
+					[ "Integer", "Array size" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 34 */
+			{
+				"Title": "Remove Text Array %0",
+				"Parameters": [
+					[ "Text", "Array name" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 35 */
+			{
+				"Title": "Change value from %1 to %2 in Text Array %0",
+				"Parameters": [
+					[ "Text", "Array name" ],
+					[ "Integer", "Position" ],
+					[ "Text", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 36 */
+			{
+				"Title": "Capture Device: Microphone"
+			},
+
+			/* --------------------------------------------------------------- 37 */
+			{
+				"Title": "Set the Microphone Capture Delay to %0 ms",
+				"Parameters": [
+					[ "Integer", "Set the Microphone Capture Delay (in milliseconds (Default value is 100))" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 38 */
+			{
+				"Title": "Set the Microphone Frequency Samples to %0",
+				"Parameters": [
+					[ "Integer", "Set the number of Microphone Frequency Samples (The less the more accurate the result (Default value is 10))" ]
+				]
+			}
+		],
+
+		/* ############################################################################################################################ */
+
+		"ConditionMenu": [
+			[
+				"Varibles",
+				[
+					"Pointers (Experimental)",
+					[ 2, "Is Pointer Null?" ],
+					"---",
+					[ 1, "Is Pointer Valid?" ],
+					"---",
+					[ 3, "Is Pointer have a Integer?" ],
+					[ 4, "Is Pointer have a Float?" ],
+					[ 5, "Is Pointer have a Text?" ]
+				]
+			]
+		],
+
+
+		"Conditions": [
+			{
+				"Title": "%o : Are %0 and %1 equal?",
+				"Triggered": false,
+				"Parameters": [
+					[ "Integer", "First number" ],
+					[ "Integer", "Second number" ]
+				]
+			},
+			/* --------------------------------------------------------------- 1 */
+			{
+				"Title": "%o : Is Pointer %0 Valid?",
+				"Triggered": false,
+				"Parameters": [
+					[ "Integer", "Pointer" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 2 */
+			{
+				"Title": "%o : Is Pointer %0 Null?",
+				"Triggered": false,
+				"Parameters": [
+					[ "Integer", "Pointer" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 3 */
+			{
+				"Title": "%o : Is Pointer %0 is %1? (Integer)",
+				"Triggered": false,
+				"Parameters": [
+					[ "Integer", "Pointer" ],
+					[ "Integer", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 4 */
+			{
+				"Title": "%o : Is Pointer %0 is %1? (Float)",
+				"Triggered": false,
+				"Parameters": [
+					[ "Integer", "Pointer" ],
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 5 */
+			{
+				"Title": "%o : Is Pointer %0 is %1? (Text)",
+				"Triggered": false,
+				"Parameters": [
+					[ "Integer", "Pointer" ],
+					[ "Text", "Text" ]
+				]
+			}
+		],
+
+		/* ############################################################################################################################ */
+
+		"ExpressionMenu": [
+			[
+				"Varibles",
+				[
+					"Pointers (Experimental)",
+					[ 2, "Allocate Memory Block" ],
+					[ 4, "Reallocate Memory Block" ],
+					"---",
+					[ 3, "Read Integer From Pointer" ],
+					[ 5, "Read Float From Pointer" ]
+				],
+				[
+					"Matrix",
+					[ 6, "Read value from Integer Matrix" ],
+					[ 7, "Read value from Float Matrix" ],
+					[ 31, "Read value from Text Matrix" ]
+				],
+				[
+					"Array",
+					[ 32, "Read value from Integer Array" ],
+					[ 33, "Read value from Float Array" ],
+					[ 34, "Read value from Text Array" ]
+				]
+			],
+			[
+				"Functions",
+				[
+					"Mathematical Functions",
+					[
+						"Logical Operations",
+						[
+							"Bitwise",
+							[ 8, "Bitwise AND" ],
+							[ 9, "Bitwise OR" ],
+							[ 10, "Bitwise XOR" ],
+							"---",
+							[ 11, "Bitwise NOT" ],
+							"---",
+							[ 12, "Bitwise NAND" ],
+							[ 13, "Bitwise NOR" ],
+							[ 14, "Bitwise XNOR" ],
+							"---",
+							[ 35, "Bitwise IMPLY" ],
+							[ 36, "Bitwise NIMPLY" ],
+							[ 37, "Bitwise CONVERSE" ],
+							[ 38, "Bitwise NCONVERSE" ],
+							"---",
+							[ 15, "Bitwise Shift Left" ],
+							[ 16, "Bitwise Shift Right" ],
+							"---",
+							[ 17, "Bitwise Rotate Left" ],
+							[ 18, "Bitwise Rotate Right" ]
+						],
+						[
+							"Conditional checking",
+							[
+								"For variables (Int, Float or Bool)",
+								[ 19, "[IF] Returns a value if true" ],
+								[ 20, "[IF/ELSE] Returns a value if true otherwise another value" ],
+								"---",
+								[ 56, "[A '?' B] Checks the given condition A to B" ],
+								"---",
+								[ 21, "[A == B] Checks if A is equal to B" ],
+								[ 22, "[A != B] Checks if A is not equal to B" ],
+								"---",
+								[ 23, "[A < B] Checks if A is less to B" ],
+								[ 24, "[A <= B] Checks if A is less equal to B" ],
+								"---",
+								[ 25, "[A > B] Checks if A is greater to B" ],
+								[ 26, "[A >= B] Checks if A is greater equal to B" ]
+							],
+							[
+								"For variables (String)",
+								[ 27, "[IF] Returns a text if true" ],
+								[ 28, "[IF/ELSE] Returns a text if true otherwise another text" ],
+								"---",
+								[ 57, "[A '?' B] Checks the given condition A to B (String)" ],
+								"---",
+								[ 29, "[A == B] Checks if A is equal to B (String)" ],
+								[ 30, "[A != B] Checks if A is not equal to B (String)" ]
+							]
+						]
+					],
+					[
+						"Trigonometry",
+						[
+							"Trigonometric Functions",
+							[ 39, "Return Sine" ],
+							[ 40, "Return Cosine" ],
+							[ 41, "Return Tangent" ],
+							"---",
+							[ 42, "Return Cosecans" ],
+							[ 43, "Return Secant" ],
+							[ 44, "Return Cotangent" ]
+
+						],
+						[
+							"Inverse Trigonometric Functions",
+							[ 45, "Return Arcsine" ],
+							[ 46, "Return Arcosine" ],
+							[ 47, "Return Arctangent" ]
+						],
+						[
+							"Hyperbolic Functions",
+							[ 48, "Return Hyperbolic Sine" ],
+							[ 49, "Return Hyperbolic Cosine" ],
+							[ 50, "Return Hyperbolic Tangent" ]
+						],
+						[
+							"Inverse Hyperbolic Functions",
+							[ 51, "Return Hyperbolic Arcsine" ],
+							[ 52, "Return Hyperbolic Arcosine" ],
+							[ 53, "Return Hyperbolic Arctangent" ]
+						],
+						[
+							"Angle Conversion",
+							[ 54, "Return Degrees to Radians conversion" ],
+							[ 55, "Return Radians to Degrees conversion" ]
+						]
+					]
+				],
+				"---",
+				[
+					"Hardware Functions",
+					[
+						"Microphone",
+						[ 58, "Get Microphone Volume" ],
+						[ 60, "Get Microphone Volume in decibels (dB)" ],
+						"---",
+						[ 59, "Get Microphone Delay" ],
+						"---",
+						[ 62, "Get Microphone Fraquency Sample Size" ],
+						[ 64, "Get Microphone Lowest Frequency" ],
+						[ 63, "Get Microphone Highest Frequency" ],
+						[ 61, "Get Microphone Average Frequency" ]
+
+					]
+				]
+			],
+			"---"
+		],
+
+		"Expressions": [
+			{
+				"Title": "Add(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "First number" ],
+					[ "Integer", "Second number" ]
+				]
+			},
+			{
+				"Title": "HelloWorld$(",
+				"Returns": "Text"
+			},
+
+			/* --------------------------------------------------------------- 2 */
+			{
+				"Title": "PtrAllocateMemory(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Allocate Memory Block (Put Integer)" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 3 */
+			{
+				"Title": "PtrReadInt(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Pointer" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 4 */
+			{
+				"Title": "PtrReallocMemory(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Pointer" ],
+					[ "Integer", "New Size (bytes)" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 5 */
+			{
+				"Title": "PtrReadFloat(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Pointer" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 6 */
+			{
+				"Title": "MtxReadInt(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Text", "Matrix Name" ],
+					[ "Text", "Variable" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 7 */
+			{
+				"Title": "MtxReadFloat(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Text", "Matrix Name" ],
+					[ "Text", "Variable" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 8 */
+			{
+				"Title": "BitAND(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 9 */
+			{
+				"Title": "BitOR(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 10 */
+			{
+				"Title": "BitXOR(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 11 */
+			{
+				"Title": "BitNOT(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 12 */
+			{
+				"Title": "BitNAND(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 13 */
+			{
+				"Title": "BitNOR(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 14 */
+			{
+				"Title": "BitXNOR(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 15 */
+			{
+				"Title": "BitSL(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Shift" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 16 */
+			{
+				"Title": "BitSR(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Shift" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 17 */
+			{
+				"Title": "BitRL(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Shift" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 18 */
+			{
+				"Title": "BitRR(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Shift" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 19 */
+			{
+				"Title": "If(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Condition" ],
+					[ "Float", "Return if True" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 20 */
+			{
+				"Title": "IfElse(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Integer", "Condition" ],
+					[ "Float", "Return if True" ],
+					[ "Float", "Return if False" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 21 */
+			{
+				"Title": "CheckEq(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Float", "Value A" ],
+					[ "Float", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 22 */
+			{
+				"Title": "CheckEqN(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Float", "Value A" ],
+					[ "Float", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 23 */
+			{
+				"Title": "CheckL(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Float", "Value A" ],
+					[ "Float", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 24 */
+			{
+				"Title": "CheckLEq(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Float", "Value A" ],
+					[ "Float", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 25 */
+			{
+				"Title": "CheckG(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Float", "Value A" ],
+					[ "Float", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 26 */
+			{
+				"Title": "CheckGEq(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Float", "Value A" ],
+					[ "Float", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 27 */
+			{
+				"Title": "If$(",
+				"Returns": "Text",
+				"Parameters": [
+					[ "Integer", "Condition" ],
+					[ "Text", "Return if True" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 28 */
+			{
+				"Title": "IfElse$(",
+				"Returns": "Text",
+				"Parameters": [
+					[ "Integer", "Condition" ],
+					[ "Text", "Return if True" ],
+					[ "Text", "Return if False" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 29 */
+			{
+				"Title": "CheckEq$(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Text", "Text A" ],
+					[ "Text", "Text B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 30 */
+			{
+				"Title": "CheckEqN$(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Text", "Text A" ],
+					[ "Text", "Text B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 31 */
+			{
+				"Title": "MtxReadText$(",
+				"Returns": "Text",
+				"Parameters": [
+					[ "Text", "Matrix Name" ],
+					[ "Text", "Variable" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 32 */
+			{
+				"Title": "ArrReadInt(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Text", "Array Name" ],
+					[ "Integer", "Variable" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 33 */
+			{
+				"Title": "ArrReadFloat(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Text", "Array Name" ],
+					[ "Integer", "Variable" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 34 */
+			{
+				"Title": "ArrReadText$(",
+				"Returns": "Text",
+				"Parameters": [
+					[ "Text", "Array Name" ],
+					[ "Integer", "Variable" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 35 */
+			{
+				"Title": "BitIMPLY(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 36 */
+			{
+				"Title": "BitNIMPLY(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 37 */
+			{
+				"Title": "BitCONVERSE(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 38 */
+			{
+				"Title": "BitNCONVERSE(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Integer", "Value A" ],
+					[ "Integer", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 39 */
+			{
+				"Title": "SinM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 40 */
+			{
+				"Title": "CosM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 41 */
+			{
+				"Title": "TanM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 42 */
+			{
+				"Title": "CosecM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 43 */
+			{
+				"Title": "SecM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 44 */
+			{
+				"Title": "CtanM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 45 */
+			{
+				"Title": "ASinM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 46 */
+			{
+				"Title": "ACos(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 47 */
+			{
+				"Title": "ATanM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 48 */
+			{
+				"Title": "Sinh(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 49 */
+			{
+				"Title": "CoshM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 50 */
+			{
+				"Title": "TanhM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 51 */
+			{
+				"Title": "ASinhM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 52 */
+			{
+				"Title": "ACoshM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 53 */
+			{
+				"Title": "ATanhM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 54 */
+			{
+				"Title": "ConvDegToRadM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 55 */
+			{
+				"Title": "ConvRadToDegM(",
+				"Returns": "Float",
+				"Parameters": [
+					[ "Float", "Value" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 56 */
+			{
+				"Title": "Check(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Float", "Value A" ],
+					[ "Text", "Condition (==, !=, <, <=, > or >=)" ],
+					[ "Float", "Value B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 57 */
+			{
+				"Title": "CheckText(",
+				"Returns": "Integer",
+				"Parameters": [
+					[ "Text", "Text A" ],
+					[ "Text", "Condition (== or !=)" ],
+					[ "Text", "Text B" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 58 */
+			{
+				"Title": "DVMicVol(",
+				"Returns": "Float"
+			},
+
+			/* --------------------------------------------------------------- 59 */
+			{
+				"Title": "DVMicDelay(",
+				"Returns": "Integer"
+			},
+
+			/* --------------------------------------------------------------- 60 */
+			{
+				"Title": "DVMicVoldB(",
+				"Returns": "Float"
+			},
+
+			/* --------------------------------------------------------------- 61 */
+			{
+				"Title": "DVMicFraqAvg(",
+				"Returns": "Float"
+			},
+
+			/* --------------------------------------------------------------- 62 */
+			{
+				"Title": "DVMicSampleSize(",
+				"Returns": "Integer"
+			},
+
+			/* --------------------------------------------------------------- 63 */
+			{
+				"Title": "DVMicFraqHigh(",
+				"Returns": "Float"
+			},
+
+			/* --------------------------------------------------------------- 64 */
+			{
+				"Title": "DVMicFraqLow(",
+				"Returns": "Float"
+			}
+		],
+
+		"Properties": [
+			{
+				"Title": "Version",
+				"Info": "Version",
+				"Type": "Text",
+				"DefaultState": "16.06.25.15"
+			}
+			/*
+			{
+				"Title": "Folder of props",
+				"Info": "Folder information",
+				"Type": "Folder"
+			},
+			{
+				"Title": "Checkbox within folder",
+				"Info": "Should be bold text.",
+				"Type": "Checkbox",
+				"DefaultState": true, // or false
+				"Bold": true
+			},
+			{
+				"Type": "FolderEnd"
+			},
+			{
+				"Title": "Static text 1",
+				"Info": "Blank text",
+				"Type": "Text",
+				"DefaultState": "Static text, default state. Or default text."
+			},
+			{
+				"Title": "Static text 2",
+				"Info": "Blank text, bold",
+				"Type": "Text",
+				"DefaultState": "Bolded static text",
+				"Bold": true
+			},
+			{
+				"Title": "Editable 3",
+				"Info": "Shouldn't be bold.",
+				"Type": "Edit button",
+				"DefaultState": "Button text"
+			},
+			{
+				"Title": "Editable 4",
+				"Info": "Fusion ignores the bold setting.",
+				"Type": "Edit button",
+				"DefaultState": "Bolded button text",
+				"Bold": true
+			},
+			{
+				"Title": "Editable 5",
+				"Info": "Still set to bold, and bold is ignored.",
+				"DefaultState": "Default text",
+				"Type": "Editbox String",
+				"Bold": true
+			},
+			{
+				"Title": "Editable 6",
+				"Info": "Force uppercase on the input text.",
+				"Type": "Editbox String",
+				"DefaultState": "Default text, made uppercase",
+				"Case": "Upper"
+			},
+			{
+				"Title": "Editable 7",
+				"Info": "This one should be limited to 25 characters.",
+				"Type": "Editbox String",
+				"DefaultState": "Default text, made lowercase",
+				"Case": "Lower",
+				"MaxLength": 25
+			},
+			{
+				"Title": "Editable 8",
+				"Info": "Number limited between 20 and 25",
+				"Type": "Editbox Number",
+				"DefaultState": 21,
+				"Minimum": 20,
+				"Maximum": 25
+			}
+			*/
+		]
+	}
+}
