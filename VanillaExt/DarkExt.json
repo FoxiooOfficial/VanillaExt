@@ -99,7 +99,11 @@
 					"Hardware Functions",
 					[
 						"Microphone",
+						[ 41, "Set Current Microphone" ],
 						[ 36, "Capture Microphone" ],
+						"---",
+						[ 39, "Refresh Microphone" ],
+						[ 40, "Refresh Microphone List" ],
 						"---",
 						[ 37, "Set Delay" ],
 						[ 38, "Set Frequency Samples" ]
@@ -464,6 +468,24 @@
 				"Parameters": [
 					[ "Integer", "Set the number of Microphone Frequency Samples (The less the more accurate the result (Default value is 10))" ]
 				]
+			},
+
+			/* --------------------------------------------------------------- 39 */
+			{
+				"Title": "Refresh Device: Microphone"
+			},
+
+			/* --------------------------------------------------------------- 40 */
+			{
+				"Title": "Refresh list of available Microphones"
+			},
+
+			/* --------------------------------------------------------------- 41 */
+			{
+				"Title": "Set the current Microphone to %0",
+				"Parameters": [
+					[ "Text", "Set the current Microphone (ID)" ]
+				]
 			}
 		],
 
@@ -672,19 +694,39 @@
 					"Hardware Functions",
 					[
 						"Microphone",
-						[ 58, "Get Microphone Volume" ],
-						[ 60, "Get Microphone Volume in decibels (dB)" ],
+						[
+							"Specific device",
+							[ 66, "Get Count of Microphones" ],
+							"---",
+							[ 65, "Get Current Microphone Name" ],
+							[ 69, "Get Current Microphone ID" ],
+							"---",
+							[ 68, "Get Name from Index" ],
+							[ 67, "Get ID from Index" ]
+						],
 						"---",
-						[ 59, "Get Microphone Delay" ],
+						[ 59, "Get Delay" ],
+						[ 62, "Get Fraquency Sample Size" ],
 						"---",
-						[ 62, "Get Microphone Fraquency Sample Size" ],
-						[ 64, "Get Microphone Lowest Frequency" ],
-						[ 63, "Get Microphone Highest Frequency" ],
-						[ 61, "Get Microphone Average Frequency" ]
+						[ 73, "Get Fraqmency Flag Check" ],
+						[ 74, "Get Microphone Active Flag" ],
+						"---",
+						[ 58, "Get Volume" ],
+						[ 64, "Get Lowest Frequency" ],
+						[ 63, "Get Highest Frequency" ],
+						[ 61, "Get Average Frequency" ],
+						"---",
+						[ 60, "Get Volume in decibels (dB)" ],
+						[ 70, "Get Lowest Volume in decibels (dB)" ],
+						[ 71, "Get Highest Volume in decibels (dB)" ],
+						[ 72, "Get Average Volume in decibels (dB)" ]
+
 
 					]
 				]
 			],
+			"---",
+			[ 75, "Get Last Error" ],
 			"---"
 		],
 
@@ -1285,15 +1327,87 @@
 			{
 				"Title": "DVMicFraqLow(",
 				"Returns": "Float"
+			},
+
+			/* --------------------------------------------------------------- 65 */
+			{
+				"Title": "DVMicCName$(",
+				"Returns": "Text"
+			},
+
+			/* --------------------------------------------------------------- 66 */
+			{
+				"Title": "DVMicCount(",
+				"Returns": "Integer"
+			},
+
+			/* --------------------------------------------------------------- 67 */
+			{
+				"Title": "DVMicID$(",
+				"Returns": "Text",
+				"Parameters": [
+					[ "Integer", "Index" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 68 */
+			{
+				"Title": "DVMicName$(",
+				"Returns": "Text",
+				"Parameters": [
+					[ "Integer", "Index" ]
+				]
+			},
+
+			/* --------------------------------------------------------------- 69 */
+			{
+				"Title": "DVMicCID$(",
+				"Returns": "Text"
+			},
+
+			/* --------------------------------------------------------------- 70 */
+			{
+				"Title": "DVMicVolLowdB(",
+				"Returns": "Float"
+			},
+
+			/* --------------------------------------------------------------- 71 */
+			{
+				"Title": "DVMicVolHighdB(",
+				"Returns": "Float"
+			},
+
+			/* --------------------------------------------------------------- 72 */
+			{
+				"Title": "DVMicVolAvgdB(",
+				"Returns": "Float"
+			},
+
+			/* --------------------------------------------------------------- 73 */
+			{
+				"Title": "DVMicFreqCheck(",
+				"Returns": "Integer"
+			},
+
+			/* --------------------------------------------------------------- 74 */
+			{
+				"Title": "DVMicActiveCheq(",
+				"Returns": "Integer"
+			},
+
+			/* --------------------------------------------------------------- 75 */
+			{
+				"Title": "Error(",
+				"Returns": "Text"
 			}
 		],
 
 		"Properties": [
 			{
 				"Title": "Version",
-				"Info": "Version",
+				"Info": "Release information (Day).(Month).(Year).(Hour)",
 				"Type": "Text",
-				"DefaultState": "16.06.25.15"
+				"DefaultState": "18.06.25.03"
 			}
 			/*
 			{

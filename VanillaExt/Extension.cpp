@@ -78,6 +78,9 @@ Extension::Extension(const EDITDATA* const edPtr, void* const objCExtPtr) :
 		LinkAction(36, DVMicrophoneCapture);
 		LinkAction(37, DVMicrophoneSetDelay);
 		LinkAction(38, DVMicrophoneSetSampleSize);
+		LinkAction(39, DVMicrophoneRefresh);
+		LinkAction(40, DVMicrophoneRefreshList);
+		LinkAction(41, DVMicrophoneSetDevice);
 
 	/// Conditions ///////////////////////////////////////////////////
 
@@ -170,6 +173,21 @@ Extension::Extension(const EDITDATA* const edPtr, void* const objCExtPtr) :
 		LinkExpression(62, DVMicrphoneGetSampleSize);
 		LinkExpression(63, DVMicrphoneGetFraqHigh);
 		LinkExpression(64, DVMicrphoneGetFraqLow);
+		LinkExpression(65, DVMicrphoneGetName);
+
+		LinkExpression(66, DVMicrophoneGetCount);
+		LinkExpression(67, DVMicrophoneGetID);
+		LinkExpression(68, DVMicrophoneGetName);
+		LinkExpression(69, DVMicrophoneGetCurrentID);
+
+		LinkExpression(70, DVMicrphoneGetFraqLowdB);
+		LinkExpression(71, DVMicrphoneGetFraqHighdB);
+		LinkExpression(72, DVMicrphoneGetFraqdB);
+
+		LinkExpression(73, DVMicrophoneFreqCheck);
+		LinkExpression(74, DVMicrophoneIsActive);
+
+		LinkExpression(75, GetLastError);
 
 		/* ============================================================================================================= */
 

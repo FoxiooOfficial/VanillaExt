@@ -126,9 +126,12 @@ class Extension
 
 		/* ################# */
 
-		/* 36 */ void DVMicrophoneCapture();
-		/* 37 */ void DVMicrophoneSetDelay(int x);
-		/* 38 */ void DVMicrophoneSetSampleSize(int x);
+		/* 36 */ void DVMicrophoneCapture		();
+		/* 37 */ void DVMicrophoneSetDelay		(int x);
+		/* 38 */ void DVMicrophoneSetSampleSize	(int x);
+		/* 39 */ void DVMicrophoneRefresh		();
+		/* 40 */ void DVMicrophoneRefreshList	();
+		/* 41 */ void DVMicrophoneSetDevice		(const TCHAR* _DeviceIndex);
 
 	/// Conditions ///////////////////////////////////////////////////
 
@@ -217,13 +220,27 @@ class Extension
 		/* 54 */ float ConvDegToRad(float _Deg);
 		/* 55 */ float ConvRadToDeg(float _Deg);
 
-		/* 58 */ float	DVMicrphoneGet();
-		/* 59 */ int	DVMicrphoneGetDelay();
-		/* 60 */ float	DVMicrphoneGetdB();
-		/* 61 */ float	DVMicrphoneGetFraq();
-		/* 62 */ int	DVMicrphoneGetSampleSize();
-		/* 63 */ float	DVMicrphoneGetFraqHigh();
-		/* 64 */ float	DVMicrphoneGetFraqLow();
+		/* 58 */ float			DVMicrphoneGet			();
+		/* 59 */ int			DVMicrphoneGetDelay		();
+		/* 60 */ float			DVMicrphoneGetdB		();
+		/* 61 */ float			DVMicrphoneGetFraq		();
+		/* 62 */ int			DVMicrphoneGetSampleSize();
+		/* 63 */ float			DVMicrphoneGetFraqHigh	();
+		/* 64 */ float			DVMicrphoneGetFraqLow	();
+		/* 65 */ const TCHAR*	DVMicrphoneGetName		();
+		/* 66 */ int			DVMicrophoneGetCount	();
+		/* 67 */ const TCHAR*	DVMicrophoneGetID		(int _Index);
+		/* 68 */ const TCHAR*	DVMicrophoneGetName		(int _Index);
+		/* 69 */ const TCHAR*	DVMicrophoneGetCurrentID();
+
+		/* 70 */ float			DVMicrphoneGetFraqLowdB ();
+		/* 71 */ float			DVMicrphoneGetFraqHighdB();
+		/* 72 */ float			DVMicrphoneGetFraqdB	();
+
+		/* 73 */ int			DVMicrophoneFreqCheck();
+		/* 74 */ int			DVMicrophoneIsActive();
+
+		/* 75 */ const TCHAR*	GetLastError();
 
 	/* ============================================================================================================= */
 

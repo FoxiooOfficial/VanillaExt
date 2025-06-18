@@ -12,8 +12,7 @@ const TCHAR * Extension::HelloWorld()
 	return Runtime.CopyString(_T("Hello world!"));
 }
 
-// 2
-intptr_t Extension::PtrAllocateMemory(int _Bytes)
+/* 2 */ intptr_t	Extension::PtrAllocateMemory(int _Bytes)
 {
 	if (_Bytes <= 0) return 0;
 
@@ -25,16 +24,14 @@ intptr_t Extension::PtrAllocateMemory(int _Bytes)
 	return _Ptr;
 }
 
-// 3
-int Extension::PtrReadInt(intptr_t _Ptr)
+/* 3 */ int		Extension::PtrReadInt(intptr_t _Ptr)
 {
 	if (__AllocatedPointers.count(_Ptr) == 0) return 0;
 
 	return *reinterpret_cast<int*>(_Ptr);
 }
 
-// 4
-intptr_t Extension::PtrReallocMemory(intptr_t _Ptr, int _Size)
+/* 4 */ intptr_t	Extension::PtrReallocMemory(intptr_t _Ptr, int _Size)
 {
 	if (_Size <= 0) return 0;
 
@@ -47,16 +44,14 @@ intptr_t Extension::PtrReallocMemory(intptr_t _Ptr, int _Size)
 	return _NEWPtr;
 }
 
-// 5
-float Extension::PtrReadFloat(intptr_t _Ptr)
+/* 5 */ float	Extension::PtrReadFloat(intptr_t _Ptr)
 {
 	if (__AllocatedPointers.count(_Ptr) == 0) return 0.0f;
 
 	return *reinterpret_cast<float*>(_Ptr);
 }
 
-// 6
-int Extension::MtxReadInt(const TCHAR* _Name, const TCHAR* _Variable)
+/* 6 */ int		Extension::MtxReadInt(const TCHAR* _Name, const TCHAR* _Variable)
 {
 	auto _IT = __IntMatrices.find(std::tstring(_Name));
 	if (_IT == __IntMatrices.end())
@@ -72,8 +67,7 @@ int Extension::MtxReadInt(const TCHAR* _Name, const TCHAR* _Variable)
 	return 0;
 }
 
-// 7
-float Extension::MtxReadFloat(const TCHAR* _Name, const TCHAR* _Variable)
+/* 7 */ float	Extension::MtxReadFloat(const TCHAR* _Name, const TCHAR* _Variable)
 {
 	auto _IT = __FloatMatrices.find(std::tstring(_Name));
 	if (_IT == __FloatMatrices.end())
@@ -91,24 +85,23 @@ float Extension::MtxReadFloat(const TCHAR* _Name, const TCHAR* _Variable)
 
 /* ############################################################################# */
 
-/* 8 */  int Extension::BitAND(int _A, int _B)				{ return _A & _B; }
-/* 9 */  int Extension::BitOR(int _A, int _B)				{ return _A | _B; }
-/* 10 */ int Extension::BitXOR(int _A, int _B)				{ return _A ^ _B; }
-/* 11 */ int Extension::BitNOT(int _A)						{ return ~_A; }
-/* 12 */ int Extension::BitNAND(int _A, int _B)				{ return ~(_A & _B); }
-/* 13 */ int Extension::BitNOR(int _A, int _B)				{ return ~(_A | _B); }
-/* 14 */ int Extension::BitXNOR(int _A, int _B)				{ return ~(_A ^ _B); }
+/* 8 */  int	Extension::BitAND(int _A, int _B)				{ return _A & _B; }
+/* 9 */  int	Extension::BitOR(int _A, int _B)				{ return _A | _B; }
+/* 10 */ int	Extension::BitXOR(int _A, int _B)				{ return _A ^ _B; }
+/* 11 */ int	Extension::BitNOT(int _A)						{ return ~_A; }
+/* 12 */ int	Extension::BitNAND(int _A, int _B)				{ return ~(_A & _B); }
+/* 13 */ int	Extension::BitNOR(int _A, int _B)				{ return ~(_A | _B); }
+/* 14 */ int	Extension::BitXNOR(int _A, int _B)				{ return ~(_A ^ _B); }
 
-/* 35 */ int Extension::BitIMPLY(int _A, int _B)			{ return (~_A) | _B; }
-/* 36 */ int Extension::BitNIMPLY(int _A, int _B)			{ return _A & (~_B); }
-/* 37 */ int Extension::BitCONVERSE(int _A, int _B)			{ return (~_B) | _A; }
-/* 38 */ int Extension::BitNCONVERSE(int _A, int _B)		{ return _B & (~_A); }
+/* 35 */ int	Extension::BitIMPLY(int _A, int _B)				{ return (~_A) | _B; }
+/* 36 */ int	Extension::BitNIMPLY(int _A, int _B)			{ return _A & (~_B); }
+/* 37 */ int	Extension::BitCONVERSE(int _A, int _B)			{ return (~_B) | _A; }
+/* 38 */ int	Extension::BitNCONVERSE(int _A, int _B)			{ return _B & (~_A); }
 
-/* 15 */ int Extension::BitShiftLeft(int _A, int _Shift)	{ return _A << _Shift; }
-/* 16 */ int Extension::BitShiftRight(int _A, int _Shift)	{ return _A >> _Shift; }
+/* 15 */ int	Extension::BitShiftLeft(int _A, int _Shift)		{ return _A << _Shift; }
+/* 16 */ int	Extension::BitShiftRight(int _A, int _Shift)	{ return _A >> _Shift; }
 
-// 17
-int Extension::BitRotateLeft(int _A, int _Shift)
+/* 17 */ int	Extension::BitRotateLeft(int _A, int _Shift)
 {
 	unsigned int _Bits = sizeof(int) * 8;
 		_Shift = _Shift % _Bits;
@@ -116,8 +109,7 @@ int Extension::BitRotateLeft(int _A, int _Shift)
 	return (_A << _Shift) | ((unsigned int)_A >> (_Bits - _Shift));
 }
 
-// 18
-int Extension::BitRotateRight(int _A, int _Shift)
+/* 18 */ int	Extension::BitRotateRight(int _A, int _Shift)
 {
 	unsigned int _Bits = sizeof(int) * 8;
 	_Shift = _Shift % _Bits;
@@ -171,8 +163,7 @@ int Extension::BitRotateRight(int _A, int _Shift)
 
 /* #############################################################################  */
 
-// 31
-const TCHAR* Extension::MtxReadText(const TCHAR* _Name, const TCHAR* _Variable)
+/* 31 */ const	TCHAR* Extension::MtxReadText(const TCHAR* _Name, const TCHAR* _Variable)
 {
 	auto _IT = __TextMatrices.find(std::tstring(_Name));
 	if (_IT == __TextMatrices.end())	return Runtime.CopyString(_T(""));
@@ -189,8 +180,7 @@ const TCHAR* Extension::MtxReadText(const TCHAR* _Name, const TCHAR* _Variable)
 	return Runtime.CopyString(_Res.c_str());
 }
 
-// 32
-int Extension::ArrGetInt(const TCHAR* _Name, int _Index)
+/* 32 */ int	Extension::ArrGetInt(const TCHAR* _Name, int _Index)
 {
 	auto _IT = __IntArrays.find(std::tstring(_Name));
 	if (_IT == __IntArrays.end()) return 0;
@@ -201,8 +191,7 @@ int Extension::ArrGetInt(const TCHAR* _Name, int _Index)
 	return _Arr[_Index];
 }
 
-// 33
-float Extension::ArrGetFloat(const TCHAR* _Name, int _Index)
+/* 33 */ float	Extension::ArrGetFloat(const TCHAR* _Name, int _Index)
 {
 	auto _IT = __FloatArrays.find(std::tstring(_Name));
 	if (_IT == __FloatArrays.end()) return 0.0f;
@@ -213,8 +202,7 @@ float Extension::ArrGetFloat(const TCHAR* _Name, int _Index)
 	return _Arr[_Index];
 }
 
-// 34
-const TCHAR* Extension::ArrGetText(const TCHAR* _Name, int _Index)
+/* 34 */ const TCHAR*	Extension::ArrGetText(const TCHAR* _Name, int _Index)
 {
 	auto _IT = __TextArrays.find(std::tstring(_Name));
 	if (_IT == __TextArrays.end())
@@ -228,61 +216,95 @@ const TCHAR* Extension::ArrGetText(const TCHAR* _Name, int _Index)
 	return Runtime.CopyString(_Arr[_Index].c_str());
 }
 
-/* 39 */ float Extension::Sin(float _X)		{ return sin(_X); }
-/* 40 */ float Extension::Cos(float _X)		{ return cos(_X); }
-/* 41 */ float Extension::Tan(float _X)		{ return tan(_X); }
-/* 42 */ float Extension::Cosec(float _X)	{ return 1.0 / sin(_X); }
-/* 43 */ float Extension::Sec(float _X)		{ return 1.0 / cos(_X); }
-/* 44 */ float Extension::Ctan(float _X)	{ return 1.0 / tan(_X); }
+/* 39 */ float	Extension::Sin(float _X)		{	return sin(_X);			}
+/* 40 */ float	Extension::Cos(float _X)		{	return cos(_X);			}
+/* 41 */ float	Extension::Tan(float _X)		{	return tan(_X);			}
+/* 42 */ float	Extension::Cosec(float _X)		{	return 1.0 / sin(_X);	}
+/* 43 */ float	Extension::Sec(float _X)		{	return 1.0 / cos(_X);	}
+/* 44 */ float	Extension::Ctan(float _X)		{	return 1.0 / tan(_X);	}
 
-/* 45 */ float Extension::ASin(float _X) { return asin(_X); }
-/* 46 */ float Extension::ACos(float _X) { return acos(_X); }
-/* 47 */ float Extension::ATan(float _X) { return atan(_X); }
+/* 45 */ float	Extension::ASin(float _X)		{	return asin(_X);	}
+/* 46 */ float	Extension::ACos(float _X)		{	return acos(_X);	}
+/* 47 */ float	Extension::ATan(float _X)		{	return atan(_X);	}
 
-/* 48 */ float Extension::Sinh(float _X) { return sinh(_X); }
-/* 49 */ float Extension::Cosh(float _X) { return cosh(_X); }
-/* 50 */ float Extension::Tanh(float _X) { return tanh(_X); }
+/* 48 */ float	Extension::Sinh(float _X)		{	return sinh(_X);	}
+/* 49 */ float	Extension::Cosh(float _X)		{	return cosh(_X);	}
+/* 50 */ float	Extension::Tanh(float _X)		{	return tanh(_X);	}
 
-/* 51 */ float Extension::ASinh(float _X) { return asinh(_X); }
-/* 52 */ float Extension::ACosh(float _X) { return acosh(_X); }
-/* 53 */ float Extension::ATanh(float _X) { return atanh(_X); }
+/* 51 */ float	Extension::ASinh(float _X)		{	return asinh(_X);	}
+/* 52 */ float	Extension::ACosh(float _X)		{	return acosh(_X);	}
+/* 53 */ float	Extension::ATanh(float _X)		{	return atanh(_X);	}
 
-/* 54 */ float Extension::ConvDegToRad(float _Deg) { return _Deg * (3.14159265359 / 180.0); }
-/* 55 */ float Extension::ConvRadToDeg(float _Deg) { return _Deg * (180.0 / 3.14159265359); }
+/* 54 */ float	Extension::ConvDegToRad(float _Deg)		{	return _Deg * (3.14159265359 / 180.0);	}
+/* 55 */ float	Extension::ConvRadToDeg(float _Deg)		{	return _Deg * (180.0 / 3.14159265359);	}
 
 /* ############################################################ */
 
-/* 58 */ float Extension::DVMicrphoneGet() { return __DVMicrophoneVol; }
-/* 59 */ int Extension::DVMicrphoneGetDelay()	{ return __DVMicrophoneDelay; }
+/* 69 */ const TCHAR*	Extension::DVMicrophoneGetCurrentID()	{	 return __DVSelectedMicrophoneID.c_str();	}
+/* 65 */ const TCHAR*	Extension::DVMicrphoneGetName()			{	return __DVMicrophoneName.c_str();			}
+/* 66 */ int			Extension::DVMicrophoneGetCount()		{	return (int)__DVMicrophoneList.size();		}
 
-/* 60 */
-float Extension::DVMicrphoneGetdB()
+/* 67 */ const TCHAR*	Extension::DVMicrophoneGetID(int _Index)
 {
-	if (__DVMicrophoneVol > 0.0f)	{	return 20.0f * log10(__DVMicrophoneVol); }
-	else							{	return __DVMicrophoneVol;				 }
+	if (_Index < 0 || _Index >= __DVMicrophoneList.size())		return _T("");
+	return __DVMicrophoneList[_Index].first.c_str();
+}
+/* 68 */ const TCHAR*	Extension::DVMicrophoneGetName(int _Index)
+{
+	if (_Index < 0 || _Index >= __DVMicrophoneList.size())		return _T("");
+	return __DVMicrophoneList[_Index].second.c_str();
 }
 
-/* 61 */
-float Extension::DVMicrphoneGetFraq()
+/* 59 */ int	Extension::DVMicrphoneGetDelay()			{	return __DVMicrophoneDelay; }
+/* 62 */ int	Extension::DVMicrphoneGetSampleSize()		{	return __DVMicrophoneSampleSize;	}
+
+/* 58 */ float	Extension::DVMicrphoneGet()					{	return __DVMicrophoneVol;	}
+/* 60 */ float	Extension::DVMicrphoneGetdB()
+{
+	if (__DVMicrophoneVol > 0.0f)							{	return 20.0f * log10(__DVMicrophoneVol); }
+	else													{	return __DVMicrophoneVol;				 }
+}
+
+/* 61 */ float	Extension::DVMicrphoneGetFraq()
 {
 	__DVMicrophoneFreqCheck = true;
 	return __DVMicrophoneFreq;
 }
-
-/* 62 */ int Extension::DVMicrphoneGetSampleSize()	{ return __DVMicrophoneSampleSize; }
-
-/* 63 */
-float Extension::DVMicrphoneGetFraqHigh()
+/* 63 */ float	Extension::DVMicrphoneGetFraqHigh()
 {
 	__DVMicrophoneFreqCheck = true;
 	return __DVMicrophoneFreqHigh;
 }
-
-/* 64 */
-float Extension::DVMicrphoneGetFraqLow()
+/* 64 */ float	Extension::DVMicrphoneGetFraqLow()
 {
 	__DVMicrophoneFreqCheck = true;
 	return __DVMicrophoneFreqLow;
 }
+
+/* 70 */ float	Extension::DVMicrphoneGetFraqLowdB()
+{
+	__DVMicrophoneFreqCheck = true;
+	if (__DVMicrophoneFreqLow > 0.0f)						{	return 20.0f * log10(__DVMicrophoneFreqLow);	}
+	else													{	return __DVMicrophoneFreqLow;					}
+}
+/* 71 */ float Extension::DVMicrphoneGetFraqHighdB()
+{
+	__DVMicrophoneFreqCheck = true;
+	if (__DVMicrophoneFreqHigh > 0.0f)						{	return 20.0f * log10(__DVMicrophoneFreqHigh);	}
+	else													{	return __DVMicrophoneFreqHigh;					}
+}
+/* 72 */ float	Extension::DVMicrphoneGetFraqdB()
+{
+	__DVMicrophoneFreqCheck = true;
+	if (__DVMicrophoneFreq > 0.0f)							{	return 20.0f * log10(__DVMicrophoneFreq);		}
+	else													{	return __DVMicrophoneFreq;						}
+}
+
+/* 73 */ int	Extension::DVMicrophoneFreqCheck()			{	return __DVMicrophoneFreqCheck	? 1 : 0;		}
+/* 74 */ int	Extension::DVMicrophoneIsActive()			{	return __MicrophoneActive		? 1 : 0;		}
+
+/* ############################################################ */
+
+/* 75 */ const TCHAR*	Extension::GetLastError()			{	return __Error.c_str();		}
 
 /* End */

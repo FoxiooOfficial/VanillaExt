@@ -12,12 +12,19 @@ std::unordered_map<std::tstring, std::vector<int>>				__IntArrays;
 std::unordered_map<std::tstring, std::vector<float>>			__FloatArrays;
 std::unordered_map<std::tstring, std::vector<std::tstring>>		__TextArrays;
 
-int		__DVMicrophoneDelay = 100;
-int		__DVMicrophoneSampleSize = 10;
-bool	__DVMicrophoneFreqCheck = false;
-float	__DVMicrophoneVol = 0.0f;
-float	__DVMicrophoneFreq = 0.0f;
-float	__DVMicrophoneFreqHigh = 0.0f;
-float	__DVMicrophoneFreqLow = 0.0f;
+int			__DVMicrophoneDelay			= 100;
+int			__DVMicrophoneSampleSize	= 10;
+bool		__DVMicrophoneFreqCheck		= false;
+float		__DVMicrophoneVol			= 0.0f;
+float		__DVMicrophoneFreq			= 0.0f;
+float		__DVMicrophoneFreqHigh		= 0.0f;
+float		__DVMicrophoneFreqLow		= 0.0f;
+bool		__MicrophoneActive			= false;
+
+std::tstring										__DVMicrophoneName = _T("");
+std::tstring										__DVSelectedMicrophoneID;
+std::vector<std::pair<std::tstring, std::tstring>>	__DVMicrophoneList;
+
+std::tstring									__Error = _T("");
 
 /* End */

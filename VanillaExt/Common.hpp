@@ -38,11 +38,17 @@ class Extension;
 #include <limits>
 #include <cmath>
 
+#include <ctime>
+#include <sstream>
+
 #include <audioclient.h>
 #include <mmdeviceapi.h>
 #include <endpointvolume.h>
 #include <chrono>
 #include <windows.h>
+
+#include <propsys.h>
+#include <functiondiscoverykeys_devpkey.h>
 
 extern std::unordered_set<intptr_t>									__AllocatedPointers;
 
@@ -54,12 +60,19 @@ extern std::unordered_map<std::tstring, std::vector<int>>			__IntArrays;
 extern std::unordered_map<std::tstring, std::vector<float>>			__FloatArrays;
 extern std::unordered_map<std::tstring, std::vector<std::tstring>>	__TextArrays;
 
-extern int		__DVMicrophoneDelay;
-extern int		__DVMicrophoneSampleSize;
-extern bool		__DVMicrophoneFreqCheck;
-extern float	__DVMicrophoneVol;
-extern float	__DVMicrophoneFreq;
-extern float	__DVMicrophoneFreqHigh;
-extern float	__DVMicrophoneFreqLow;
+extern int				__DVMicrophoneDelay;
+extern int				__DVMicrophoneSampleSize;
+extern bool				__DVMicrophoneFreqCheck;
+extern float			__DVMicrophoneVol;
+extern float			__DVMicrophoneFreq;
+extern float			__DVMicrophoneFreqHigh;
+extern float			__DVMicrophoneFreqLow;
+extern bool				__MicrophoneActive;
+
+extern std::tstring											__DVMicrophoneName;
+extern std::tstring											__DVSelectedMicrophoneID;
+extern std::vector<std::pair<std::tstring, std::tstring>>	__DVMicrophoneList;
+
+extern std::tstring											__Error;
 
 /* End */
