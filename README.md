@@ -12,6 +12,9 @@
 
 <p>It is mainly designed for math functions however it includes additional things like variable insertion, microphone support and If/Else conditionals inside calculations.</p>
 
+
+<h3>This extension will no longer be developed! There are plans to make a newer version "VanillaExtPlus", the release date is unknown as it is still an early development version</h3>
+
 <b>
 <p>The project was created using this <a href="https://github.com/SortaCore/MMF2Exts">repository</a> created by <a href="https://github.com/SortaCore">Phi/SortaCore</a></p>
 </b>
